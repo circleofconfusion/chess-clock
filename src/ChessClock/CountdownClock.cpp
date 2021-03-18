@@ -1,16 +1,16 @@
 #include "CountdownClock.h"
 
 const byte numbers[10] = {
-  0b11010111, // 0
-  0b00010100, // 1
-  0b11001101, // 2
-  0b01011101, // 3
-  0b00011110, // 4
-  0b01011011, // 5
-  0b11011011, // 6
-  0b00010101, // 7
-  0b11011111, // 8
-  0b01011111 // 9
+  0b11101011, // 0
+  0b00001001, // 1
+  0b11100101, // 2
+  0b10101101, // 3
+  0b00001111, // 4
+  0b10101110, // 5
+  0b11101110, // 6
+  0b10001001, // 7
+  0b11101111, // 8
+  0b10101111 // 9
 };
 
 // private methods
@@ -40,7 +40,7 @@ void CountdownClock::updateDisplay()
 
   // set its segments through the shift register
   int digit = numbers[getDigitValue()];
-  if (active_digit == 1) digit |= 0b00100000; // if 2nd digit, light the decimal point
+  if (active_digit == 1) digit |= 0b00010000; // if 2nd digit, light the decimal point
   digitalWrite(latch_pin, LOW);
   shiftOut(data_pin, clock_pin, LSBFIRST, digit);
   digitalWrite(latch_pin, HIGH);

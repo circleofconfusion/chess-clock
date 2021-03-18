@@ -24,11 +24,6 @@ void setup() {
   digitalWrite(DIGIT_PINS[2], HIGH);
   digitalWrite(DIGIT_PINS[3], HIGH);
 
-  cc_1.add_minute();
-  cc_1.add_minute();
-  cc_1.add_minute();
-  cc_1.subtract_minute();
-  cc_1.start();
 }
 
 void loop() {
